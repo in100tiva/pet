@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="min-h-screen bg-base-300">
+        <!-- Menu -->
+        <div class="w-full p-4 flex justify-between items-center bg-base-200">
+            <div class="text-xl font-bold">Pet Care</div>
+            <ul class="menu menu-horizontal bg-base-300 rounded-box">
+                <li>
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Início
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Meus Pets
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        Agendamentos
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div class="avatar">
+                            <div class="w-8 rounded-full">
+                                <img src="/api/placeholder/32/32" alt="profile" />
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div class="container mx-auto p-6">
+            <!-- Dashboard Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold">Agendar Carinho</h1>
+                <button class="btn btn-primary">Adicionar Pet</button>
+            </div>
+
+            <!-- Pet Selection -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div class="card bg-base-200 shadow-xl cursor-pointer hover:shadow-2xl transition-shadow">
+                    <figure class="px-10 pt-10">
+                        <img src="/api/placeholder/200/200" alt="Dog" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Rex</h2>
+                        <p>Golden Retriever • 3 anos</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Selecionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200 shadow-xl cursor-pointer hover:shadow-2xl transition-shadow">
+                    <figure class="px-10 pt-10">
+                        <img src="/api/placeholder/200/200" alt="Cat" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Luna</h2>
+                        <p>Siamês • 2 anos</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Selecionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200 shadow-xl cursor-pointer hover:shadow-2xl transition-shadow">
+                    <figure class="px-10 pt-10">
+                        <img src="/api/placeholder/200/200" alt="Rabbit" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Bolinha</h2>
+                        <p>Coelho • 1 ano</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Selecionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Section -->
+            <div class="bg-base-200 p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Escolha a Data e Horário</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Calendar -->
+                    <div class="join join-vertical">
+                        <div class="join-item bg-base-300 p-4">
+                            <div class="grid grid-cols-7 gap-2 text-center">
+                                <div class="font-bold">Dom</div>
+                                <div class="font-bold">Seg</div>
+                                <div class="font-bold">Ter</div>
+                                <div class="font-bold">Qua</div>
+                                <div class="font-bold">Qui</div>
+                                <div class="font-bold">Sex</div>
+                                <div class="font-bold">Sáb</div>
+                            </div>
+                            <div class="grid grid-cols-7 gap-2 text-center mt-2">
+                                <div class="p-2">1</div>
+                                <div class="p-2">2</div>
+                                <div class="p-2">3</div>
+                                <div class="p-2 bg-primary text-primary-content rounded-lg">4</div>
+                                <div class="p-2">5</div>
+                                <div class="p-2">6</div>
+                                <div class="p-2">7</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Time Slots -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Horários Disponíveis</h3>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button class="btn btn-outline">09:00</button>
+                            <button class="btn btn-outline">10:00</button>
+                            <button class="btn btn-outline btn-disabled">11:00</button>
+                            <button class="btn btn-outline">14:00</button>
+                            <button class="btn btn-outline">15:00</button>
+                            <button class="btn btn-outline">16:00</button>
+                            <button class="btn btn-outline">17:00</button>
+                            <button class="btn btn-outline">18:00</button>
+                            <button class="btn btn-outline">19:00</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Selection -->
+            <div class="bg-base-200 p-6 rounded-lg shadow-lg mt-6">
+                <h2 class="text-2xl font-bold mb-4">Escolha os Serviços</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <label class="label cursor-pointer justify-start gap-4">
+                        <input type="checkbox" class="checkbox checkbox-primary" />
+                        <span class="label-text">Banho</span>
+                    </label>
+                    <label class="label cursor-pointer justify-start gap-4">
+                        <input type="checkbox" class="checkbox checkbox-primary" />
+                        <span class="label-text">Tosa</span>
+                    </label>
+                    <label class="label cursor-pointer justify-start gap-4">
+                        <input type="checkbox" class="checkbox checkbox-primary" />
+                        <span class="label-text">Hidratação</span>
+                    </label>
+                    <label class="label cursor-pointer justify-start gap-4">
+                        <input type="checkbox" class="checkbox checkbox-primary" />
+                        <span class="label-text">Massagem</span>
+                    </label>
+                    <label class="label cursor-pointer justify-start gap-4">
+                        <input type="checkbox" class="checkbox checkbox-primary" />
+                        <span class="label-text">Unha</span>
+                    </label>
+                    <label class="label cursor-pointer justify-start gap-4">
+                        <input type="checkbox" class="checkbox checkbox-primary" />
+                        <span class="label-text">Escovação</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Confirmation Button -->
+            <div class="mt-6 text-center">
+                <button class="btn btn-primary btn-lg">Confirmar Agendamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pet selection
+            const petCards = document.querySelectorAll('.card');
+            petCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    petCards.forEach(c => c.classList.remove('ring', 'ring-primary'));
+                    this.classList.add('ring', 'ring-primary');
+                });
+            });
+
+            // Time slot selection
+            const timeSlots = document.querySelectorAll('.btn-outline');
+            timeSlots.forEach(slot => {
+                if (!slot.classList.contains('btn-disabled')) {
+                    slot.addEventListener('click', function() {
+                        timeSlots.forEach(s => s.classList.remove('btn-active'));
+                        this.classList.add('btn-active');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
